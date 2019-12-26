@@ -28,6 +28,7 @@
   - в функции validateTextDocument json переменная должна получать текст дукумента (textDocument.getText());
   - в makeLint, массив errors должен модифицироваться, функция concat возвращает новый массив, заменил на push;
   - чтобы правило lockNameIsRequired не срабатывало на модификаторах, добавил в makeLint условие if (property.key.value !== 'mods' && property.key.value !== 'elemMods');
+  - в validateObject при сравнении ключей jsonToAst.AstObject добавил toLowerCase(), чтобы правило не зависело от регистра букв;
 
 ---
 
