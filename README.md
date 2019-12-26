@@ -8,7 +8,12 @@
 ---
 
 ### Этапы
+
 - start
+- установил prettier tslint tslint-etc prettier-tslint для линтинга и форматирования (tslint-etc для правила no-unused-declaration);
+  - добавил команды в package.json tslint и lint
+  - автоматически поправил и отфрматировал код в один code style
+  - выловил неиспользуемый интерфейс IPackageInfo в jsonMain.ts
 
 ---
 
