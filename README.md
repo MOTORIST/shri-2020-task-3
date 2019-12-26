@@ -19,14 +19,15 @@
   - там же textDocumentSync не имеет формат string ('always'), заменил на TextDocumentSyncKind.Full;
   - в validateProperty изменил позицию ошибки property.key.loc на property.loc;
 - починил превью интерфейса
-  - исправил загрузку контента в webView (изменил регулярное выражение)
-  - в функции getMediaPath изменил схему на 'vscode-resource'
-  - в style.css убрал точку у div (весёлые Вы ребята =))
-  - заменил style.css на style.css из первого задания
-  - добавил script.js из первого задания
+  - исправил загрузку контента в webView (изменил регулярное выражение);
+  - в функции getMediaPath изменил схему на 'vscode-resource';
+  - в style.css убрал точку у div (весёлые Вы ребята =));
+  - заменил style.css на style.css из первого задания;
+  - добавил script.js из первого задания;
 - линтер
-  - в функции validateTextDocument json переменная должна получать текст дукумента (textDocument.getText())
-  - в makeLint, массив errors должен модифицироваться, функция concat возвращает новый массив, заменил на push
+  - в функции validateTextDocument json переменная должна получать текст дукумента (textDocument.getText());
+  - в makeLint, массив errors должен модифицироваться, функция concat возвращает новый массив, заменил на push;
+  - чтобы правило lockNameIsRequired не срабатывало на модификаторах, добавил в makeLint условие if (property.key.value !== 'mods' && property.key.value !== 'elemMods');
 
 ---
 

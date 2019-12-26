@@ -28,7 +28,10 @@ export function makeLint<TProblemKey>(
 
         node.children.forEach((property: jsonToAst.AstProperty) => {
           cbProp(property);
-          walk(property.value, cbProp, cbObj);
+
+          if (property.key.value !== 'mods' && property.key.value !== 'elemMods') {
+            walk(property.value, cbProp, cbObj);
+          }
         });
         break;
     }
