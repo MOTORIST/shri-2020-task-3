@@ -37,6 +37,7 @@
   - добавил локальный пакет my-linter (линтер из второго задания);
   - добавил настройки строгости правил в package.json
   - добавил новые правила в configuration.ts
+  - создал функцию myLinterDiagnostics, которая на основе ошибок из линтера формирует массив Diagnostic и возвращает его. Данные из myLinterDiagnostics и baseLinterDiagnostics объединяются и отпраляются в sendDiagnostics;
 
 ---
 
