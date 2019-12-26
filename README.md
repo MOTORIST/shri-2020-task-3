@@ -18,6 +18,10 @@
   - в функции onInitialize аргумент params: InitializeParams не используется, удалил и добавил тип возвращаемых данных InitializeResult;
   - там же textDocumentSync не имеет формат string ('always'), заменил на TextDocumentSyncKind.Full;
   - в validateProperty изменил позицию ошибки property.key.loc на property.loc;
+- починил превью интерфейса
+  - исправил загрузку контента в webView (изменил регулярное выражение)
+  - в функции getMediaPath изменил схему на 'vscode-resource'
+  - в style.css убрал точку у div (весёлые Вы ребята =))
 
 ---
 

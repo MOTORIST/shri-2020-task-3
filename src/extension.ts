@@ -1,8 +1,8 @@
 import { readFileSync } from 'fs';
 import { join, resolve, basename } from 'path';
 import { bemhtml } from 'bem-xjst';
-
 import * as vscode from 'vscode';
+import * as path from 'path';
 import {
   LanguageClient,
   LanguageClientOptions,
@@ -53,7 +53,7 @@ const getPreviewKey = (doc: vscode.TextDocument): string => doc.uri.path;
 
 const getMediaPath = (context: vscode.ExtensionContext) =>
   vscode.Uri.file(context.extensionPath)
-    .with({ scheme: 'resource' })
+    .with({ scheme: 'vscode-resource' })
     .toString() + '/';
 
 const initPreviewPanel = (document: vscode.TextDocument) => {
@@ -88,7 +88,7 @@ const updateContent = (doc: vscode.TextDocument, context: vscode.ExtensionContex
       const data = JSON.parse(json);
       const html = template.apply(data);
 
-      panel.webview.html = previewHtml.replace(/{{\s+(\w+)\s+}}/g, (str, key) => {
+      panel.webview.html = previewHtml.replace(/{{(.*?)}}/g, (str, key) => {
         switch (key) {
           case 'content':
             return html;
