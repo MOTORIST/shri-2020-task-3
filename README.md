@@ -1,3 +1,17 @@
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://yastatic.net/s3/lpc/32dae440-acae-4a3a-84ae-4325facbc027.svg" alt="Project logo"></a>
+</p>
+
+<h3 align="center">Yandex SHRI 2020, TASK-3</h3>
+
+---
+
+### Этапы
+- start
+
+---
+
 # Задание 3. Найдите ошибки
 
 В этом репозитории находятся материалы тестового задания «Найдите ошибки» для [16-й Школы разработки интерфейсов](https://yandex.ru/promo/academy/shri) (зима 2020, Москва).
