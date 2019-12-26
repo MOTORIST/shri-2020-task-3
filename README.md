@@ -32,6 +32,7 @@
   - в validateTextDocument убрал условие if (diagnostics.length), т.к. если ошибок нет, то они должны обнуляться в редакторе (в conn.sendDiagnostics передается пустой массив);
   - изменил название функций GetSeverity и GetMessage на getSeverity, getMessage из-за соглашения именования функций;
   - в функции getSeverity поправил строгость ошибки с DiagnosticSeverity.Information на DiagnosticSeverity.Error
+  - в docs.onDidChangeContent и conn.onDidChangeConfiguration обернул функции validateTextDocument и validateAll, соответсвенноб в try catch, чтобы отловить ошибки из промиса;
 
 ---
 
