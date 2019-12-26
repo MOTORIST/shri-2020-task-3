@@ -2,11 +2,12 @@ import {
   createConnection,
   ProposedFeatures,
   TextDocuments,
-  InitializeParams,
   TextDocument,
   Diagnostic,
   DiagnosticSeverity,
   DidChangeConfigurationParams,
+  InitializeResult,
+  TextDocumentSyncKind,
 } from 'vscode-languageserver';
 
 import { basename } from 'path';
@@ -20,13 +21,15 @@ let conn = createConnection(ProposedFeatures.all);
 let docs = new TextDocuments();
 let conf: ExampleConfiguration | undefined = undefined;
 
-conn.onInitialize((params: InitializeParams) => {
-  return {
-    capabilities: {
-      textDocumentSync: 'always',
-    },
-  };
-});
+conn.onInitialize(
+  (): InitializeResult => {
+    return {
+      capabilities: {
+        textDocumentSync: TextDocumentSyncKind.Full,
+      },
+    };
+  },
+);
 
 function GetSeverity(key: RuleKeys): DiagnosticSeverity | undefined {
   if (!conf || !conf.severity) {
@@ -75,7 +78,7 @@ async function validateTextDocument(textDocument: TextDocument): Promise<void> {
       ? [
           {
             key: RuleKeys.UppercaseNamesIsForbidden,
-            loc: property.key.loc,
+            loc: property.loc,
           },
         ]
       : [];
