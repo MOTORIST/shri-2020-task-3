@@ -31,7 +31,7 @@ conn.onInitialize(
   },
 );
 
-function GetSeverity(key: RuleKeys): DiagnosticSeverity | undefined {
+function getSeverity(key: RuleKeys): DiagnosticSeverity | undefined {
   if (!conf || !conf.severity) {
     return undefined;
   }
@@ -52,7 +52,7 @@ function GetSeverity(key: RuleKeys): DiagnosticSeverity | undefined {
   }
 }
 
-function GetMessage(key: RuleKeys): string {
+function getMessage(key: RuleKeys): string {
   if (key === RuleKeys.BlockNameIsRequired) {
     return 'Field named \'block\' is required!';
   }
@@ -88,10 +88,10 @@ async function validateTextDocument(textDocument: TextDocument): Promise<void> {
     validateProperty,
     validateObject,
   ).reduce((list: Diagnostic[], problem: LinterProblem<RuleKeys>): Diagnostic[] => {
-    const severity = GetSeverity(problem.key);
+    const severity = getSeverity(problem.key);
 
     if (severity) {
-      const message = GetMessage(problem.key);
+      const message = getMessage(problem.key);
 
       let diagnostic: Diagnostic = {
         range: {
