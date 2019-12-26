@@ -66,7 +66,7 @@ function GetMessage(key: RuleKeys): string {
 
 async function validateTextDocument(textDocument: TextDocument): Promise<void> {
   const source = basename(textDocument.uri);
-  const json = textDocument.uri;
+  const json = textDocument.getText();
 
   const validateObject = (obj: jsonToAst.AstObject): LinterProblem<RuleKeys>[] =>
     obj.children.some(p => p.key.value === 'block')

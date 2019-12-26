@@ -2,7 +2,7 @@ import { readFileSync } from 'fs';
 import { join, resolve, basename } from 'path';
 import { bemhtml } from 'bem-xjst';
 import * as vscode from 'vscode';
-import * as path from 'path';
+
 import {
   LanguageClient,
   LanguageClientOptions,

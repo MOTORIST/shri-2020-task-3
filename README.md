@@ -24,6 +24,9 @@
   - в style.css убрал точку у div (весёлые Вы ребята =))
   - заменил style.css на style.css из первого задания
   - добавил script.js из первого задания
+- линтер
+  - в функции validateTextDocument json переменная должна получать текст дукумента (textDocument.getText())
+  - в makeLint, массив errors должен модифицироваться, функция concat возвращает новый массив, заменил на push
 
 ---
 
