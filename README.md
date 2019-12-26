@@ -35,6 +35,7 @@
   - в docs.onDidChangeContent и conn.onDidChangeConfiguration обернул функции validateTextDocument и validateAll, соответсвенноб в try catch, чтобы отловить ошибки из промиса;
 - подключил линтер из второго задания:
   - добавил локальный пакет my-linter (линтер из второго задания);
+  - добавил настройки строгости правил в package.json
 
 ---
 
