@@ -18,13 +18,13 @@
   - в функции onInitialize аргумент params: InitializeParams не используется, удалил и добавил тип возвращаемых данных InitializeResult;
   - там же textDocumentSync не имеет формат string ('always'), заменил на TextDocumentSyncKind.Full;
   - в validateProperty изменил позицию ошибки property.key.loc на property.loc;
-- починил превью интерфейса
+- починил превью интерфейса:
   - исправил загрузку контента в webView (изменил регулярное выражение);
   - в функции getMediaPath изменил схему на 'vscode-resource';
   - в style.css убрал точку у div (весёлые Вы ребята =));
   - заменил style.css на style.css из первого задания;
   - добавил script.js из первого задания;
-- линтер
+- линтер:
   - в функции validateTextDocument json переменная должна получать текст дукумента (textDocument.getText());
   - в makeLint, массив errors должен модифицироваться, функция concat возвращает новый массив, заменил на push;
   - чтобы правило lockNameIsRequired не срабатывало на модификаторах, добавил в makeLint условие if (property.key.value !== 'mods' && property.key.value !== 'elemMods');
@@ -33,6 +33,8 @@
   - изменил название функций GetSeverity и GetMessage на getSeverity, getMessage из-за соглашения именования функций;
   - в функции getSeverity поправил строгость ошибки с DiagnosticSeverity.Information на DiagnosticSeverity.Error
   - в docs.onDidChangeContent и conn.onDidChangeConfiguration обернул функции validateTextDocument и validateAll, соответсвенноб в try catch, чтобы отловить ошибки из промиса;
+- подключил линтер из второго задания:
+  - добавил локальный пакет my-linter (линтер из второго задания);
 
 ---
 
