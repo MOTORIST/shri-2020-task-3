@@ -31,6 +31,7 @@
   - в validateObject при сравнении ключей jsonToAst.AstObject добавил toLowerCase(), чтобы правило не зависело от регистра букв;
   - в validateTextDocument убрал условие if (diagnostics.length), т.к. если ошибок нет, то они должны обнуляться в редакторе (в conn.sendDiagnostics передается пустой массив);
   - изменил название функций GetSeverity и GetMessage на getSeverity, getMessage из-за соглашения именования функций;
+  - в функции getSeverity поправил строгость ошибки с DiagnosticSeverity.Information на DiagnosticSeverity.Error
 
 ---
 
