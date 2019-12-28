@@ -14,6 +14,7 @@
   - добавил команды в package.json tslint и lint;
   - автоматически поправил и отфрматировал код в один code style;
   - выловил неиспользуемый интерфейс IPackageInfo в jsonMain.ts;
+  - удалил jsonMain.ts и hash.ts, т.к. не используются;
 - поправил ошибки:
   - в функции onInitialize аргумент params: InitializeParams не используется, удалил и добавил тип возвращаемых данных InitializeResult;
   - там же textDocumentSync не имеет формат string ('always'), заменил на TextDocumentSyncKind.Full;
